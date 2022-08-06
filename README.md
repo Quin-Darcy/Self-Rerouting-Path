@@ -1,9 +1,5 @@
-# p5.js
+# Self-Rerouting Path
 
-This is the Template Repl for p5.js.
-
-p5.js is a JavaScript library for creative coding, with a focus on making coding accessible and inclusive for artists, designers, educators, beginners, and anyone else! p5.js is free and open-source because we believe software, and the tools to learn it, should be accessible to everyone.
-
-[Check out the official docs here](https://p5js.org/reference/).
+This is a semi-autonomous space filling curve. It starts from the center of the canvas and places segments randomly until the only choices for it would result in it hitting a wall or self-intersecting. At this point, the curve can remove its own segments which allows it to revert back to a previous state and make a diffetent choice. How far back it can revert depends on how many times it has had to re-route and how many segments are in the path. If it has frequently found itself without any valid candidates, then it is likely in an enclosure and would need to revert back significantly to escape the enclosure. Similarly, it the path is very long, then the likelyhood of ending up in an enclosure is far higher and in both these cases, we grant it the ability to revert back many segments. 
 
 
